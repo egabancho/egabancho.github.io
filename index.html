@@ -1,0 +1,47 @@
+---
+layout: home
+---
+<div class="wrapper">
+  <section class="me">
+    <div class="greet">
+      <p class="lead">Hi there, I'm Esteban!</p>
+      <p>I work as a freelance full stack web developer.<br />
+        For the past 7+ years, I've worked as a back-end Python developer, using
+        Flask as my preferred framework to do so (among other tools and
+        libraries). Lately, I have embraced the front-end lifestyle and have
+        started to give some love to some of the existing javascript frameworks,
+        like React or Vue.
+      </p>
+    </div>
+    <div class="home-pic">
+      {% asset me.jpg
+         @magick:compress=50
+         srcset:width="300 1x"
+         alt='This is me'
+      %}
+    </div>
+  </section>
+
+  <footer class="home-footer">
+    <div class ="home-footer-link">
+      <a href="mailto:egabancho@gmail.com"><i class="far fa-envelope fa-3x"></i></a>
+    </div>
+    <div class ="home-footer-link">
+      <a href="https://github.com/egabancho"><i class="fab fa-github fa-3x"></i></a>
+    </div>
+    <!--
+    <div class ="home-footer-link">
+      <a href="https://www.linkedin.com/in/egabancho/"><i class="fab fa-linkedin-in fa-3x"></i></a>
+    </div>
+    -->
+    <div class ="home-footer-link">
+      <a href="https://twitter.com/egabancho"><i class="fab fa-twitter fa-3x"></i></a>
+    </div>
+    <!--
+    <div class="home-footer-link">
+      <a href="#"><i class="far fa-address-card fa-4x"></i></a>
+    </div>
+    -->
+  </footer>
+</div>
+<!-- Wrapper Ends -->

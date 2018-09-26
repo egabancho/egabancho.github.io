@@ -1,0 +1,28 @@
+language: ruby
+
+rvm:
+  - 2.4.1
+
+branches:
+  only:
+  - source
+
+before_install:
+  - "gem install bundler"
+
+script: ./scripts/cibuild
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+deploy:
+  provider: pages
+  local-dir: ./_site
+  target-branch: master
+  skip-cleanup: true
+  github-token:
+    secure: WKj8clB557Btbw1WaIqXyT+B1fuO2ZDH51t1Wd6N5OuWYT4TNUQ/tyeOzZMLtKNRiGRjKtKzbD1eXT6KZVAoyftgfAjliVRt4NrccZcl9HXTmyns+fX/X51SY/UstlluWMdTdyFcrjmuUVVG8eYEoX3J8DSDU1PbVyxfU7skfV8m9xcJTVAFEPI2TX8o5ZLolYf1MZQZkWpdmaWc6xR/cHYweHvoruJreyowAF3ZgrjEzExYElNsTYGILp/5VDC6gmEsl24/1R1GsgeOuYwG/Gw3YYhXLikwMSYyzs+g2W9bBV+vXpNEYzYMHetOavUxBqnoELnYj2IXb+RJcyq4jRvGmpNQ7cj7RSj2x16sGlOMPUUnteUDQCWjJRtVWFRSFjT3Zx2DuIe8fsiyy7FyaNkMDOuYguOWgOJ1c4WW9d5b5HERuItd1uJGTuf6rdPnyfdsPFI45AUD8NR/7yTmIqojAUiyED0ad3tYCsv9BaOqGXB0OwlxVJxl1m4pdW8NdHN1O3tDxRigmlofM9NfT0oQwrqUtslLXfSPaqY/Lo+5CkU6wyQVmNwcq02O+V2+1ylcGOgjO2N5aRJm/4ty9O4l1QBfs6QR555GPlIDA49hwhRQITfFYAA+heon8C03AaEpme3hTTXAFKmrraE1YDEgyqaLFwtM4XFyucet6E4=
+  keep-history: true
+  on:
+    branch: source
