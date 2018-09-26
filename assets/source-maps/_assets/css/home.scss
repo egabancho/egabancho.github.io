@@ -1,0 +1,62 @@
+/* Home Specific Rules*/
+html,
+body {
+    height: 100%;
+    margin: 0 10%;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.me {
+    margin-top: 30px;
+    align-self: end;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        'home-pic greet greet';
+}
+
+.greet {
+    grid-area: greet;
+    align-self: center;
+}
+
+.home-pic {
+    grid-area: home-pic;
+    text-align: center;
+    align-self: center;
+}
+
+.home-pic img {
+    border-radius: 50%;
+}
+
+.home-footer {
+    width: 70%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-self: center;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+}
+
+.home-footer-link {
+    justify-self: center;
+}
+
+.home-footer-link a{
+    color: var(--dark);
+}
+
+/* Media Queries */
+
+@media (max-width: 700px) {
+    .me{
+        grid-template-areas:
+            'home-pic'
+                'greet';
+    }
+}
