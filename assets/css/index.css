@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* See
+ * https://stackoverflow.com/questions/64430464/how-to-prevent-alpine-js-modal-from-showing-every-time-i-refresh-the-page
+ * on how to prevent alpine hidden elems revealing glitch at page load/refresh
+ * time. */
+ [x-cloak] {
+    display: none !important;
+  }

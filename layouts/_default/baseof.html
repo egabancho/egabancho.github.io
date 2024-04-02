@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode | default "en" }}' class="h-full antialiased" suppressHydrationWarning>
+  {{ partial "head/head.html" . }}
+  <body class="flex h-full bg-zinc-50 dark:bg-black">
+    <div class="flex w-full">
+      <div class="relative flex w-full flex-col">
+        {{ block "header" . }}
+        {{ partial "partials/header/menu.html" . }}
+        {{ end }}
+
+        {{ block "main" . }}
+        {{ end }}
+
+        <!-- SCROLL-TO-TOP BUTTON -->
+        {{ partial "partials/scrollToTop.html" . }}
+        <!-- END OF SCROLL-TO-TOP BUTTON -->
+        {{ block "footer" . }}
+        {{ partial "partials/footer.html" . }}
+        {{ end }}
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+baseURL = 'https://egabancho.com'
+languageCode = 'en-us'
+title = 'Esteban J. G. Gabancho'
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+  [[module.mounts]]
+    source = "node_modules/alpinejs/dist/module.esm.js"
+    target = "static/js/alpinejs.js"
+
+[menu]
+[[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+[[menu.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+[[menu.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 30
+
+
+[build]
+  writeStats = true
+  [build.buildStats]
+    enable = true
+[[build.cachebusters]]
+    source = 'assets/watching/hugo_stats\.json'
+    target = 'styles\.css'
+[[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+[[build.cachebusters]]
+    source = 'assets/.*\.(js|ts|jsx|tsx)'
+    target = 'js'
+[[build.cachebusters]]
+    source = 'assets/.*\.(.*)$'
+    target = '$1'
+
